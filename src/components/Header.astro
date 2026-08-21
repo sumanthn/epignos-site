@@ -1,0 +1,17 @@
+---
+import { product, site } from "../content";
+---
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="wordmark" href="/">
+      {site.name}<span class="tld">.dev</span>
+    </a>
+    <nav class="nav" aria-label="Primary">
+      <a class="nav-product" href={product.href}>EpiNote</a>
+      <a href="/#work">Consulting</a>
+      <a href="/#about">About</a>
+      <a class="button button-secondary button-small" href="/#contact">Contact</a>
+    </nav>
+  </div>
+</header>

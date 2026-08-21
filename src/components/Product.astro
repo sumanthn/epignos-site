@@ -1,0 +1,54 @@
+---
+import { product } from "../content";
+---
+
+<section class="section" id="epinote" aria-labelledby="product-heading">
+  <div class="wrap product-layout">
+    <div>
+      <p class="eyebrow">{product.eyebrow}</p>
+      <p class="product-title">
+        <a href={product.href}>{product.name}</a>
+        <span class="badge">{product.badge}</span>
+      </p>
+      <h2 id="product-heading">{product.title}</h2>
+      <p class="section-intro">{product.body}</p>
+      <div class="product-actions">
+        <a class="button" href={product.href}>{product.cta}</a>
+        <a class="button button-secondary" href={product.secondaryHref}>{product.secondaryCta}</a>
+      </div>
+      <div class="points">
+        {
+          product.points.map((item) => (
+            <article class="point">
+              <h3>{item.name}</h3>
+              <p>{item.body}</p>
+            </article>
+          ))
+        }
+      </div>
+    </div>
+
+    <div class="product-frame" aria-hidden="true">
+      <div class="preview-topbar">
+        <span>{product.name}</span>
+        <span class="preview-search">{product.preview.search}</span>
+      </div>
+      <div class="preview-body">
+        <aside class="preview-sidebar">
+          <span class="preview-label">{product.preview.library}</span>
+          <strong>{product.preview.book}</strong>
+          {
+            product.preview.notes.map((note, i) => (
+              <span class:list={["preview-note", { active: i === 0 }]}>{note}</span>
+            ))
+          }
+        </aside>
+        <article class="preview-editor">
+          <span class="preview-label">{product.preview.path}</span>
+          <h3>{product.preview.heading}</h3>
+          <p>{product.preview.text}</p>
+        </article>
+      </div>
+    </div>
+  </div>
+</section>

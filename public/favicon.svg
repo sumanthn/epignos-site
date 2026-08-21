@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" role="img" aria-label="Epignos">
+  <rect width="32" height="32" rx="8" fill="#f7f7f2"/>
+  <path d="M9 8h14v2.2H11.4V14.7H21V16.9H11.4V21.8H23.2V24H9V8Z" fill="#172033"/>
+  <rect x="11.4" y="14.7" width="9.6" height="2.2" fill="#315cf5"/>
+</svg>

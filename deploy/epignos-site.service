@@ -1,0 +1,26 @@
+[Unit]
+Description=Epignos marketing site
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=epignos
+Group=epignos
+WorkingDirectory=/opt/epignos-site/current
+EnvironmentFile=/home/epignos/.config/epignos-site/app.env
+Environment=NODE_ENV=production
+Environment=HOST=127.0.0.1
+Environment=PORT=3001
+ExecStart=/usr/local/bin/node ./dist/server/entry.mjs
+Restart=on-failure
+RestartSec=5
+TimeoutStopSec=20
+KillSignal=SIGTERM
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=full
+ProtectHome=read-only
+
+[Install]
+WantedBy=multi-user.target

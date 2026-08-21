@@ -1,0 +1,23 @@
+---
+import { work } from "../content";
+---
+
+<section class="section" id="work" aria-labelledby="work-heading">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">{work.eyebrow}</p>
+      <h2 id="work-heading">{work.title}</h2>
+      <p class="section-intro">{work.intro}</p>
+    </div>
+    <div class="cards">
+      {
+        work.items.map((item) => (
+          <article class="card">
+            <h3>{item.name}</h3>
+            <p>{item.body}</p>
+          </article>
+        ))
+      }
+    </div>
+  </div>
+</section>
