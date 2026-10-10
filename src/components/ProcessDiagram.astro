@@ -1,0 +1,23 @@
+---
+interface Props {
+  label: string;
+  steps: { title: string; text: string }[];
+  caption: string;
+  feedback?: string;
+}
+const { label, steps, caption, feedback } = Astro.props;
+---
+<figure class="process-diagram">
+  <p class="diagram-label">{label}</p>
+  <ol class="process-steps" style={`--steps: ${steps.length}`}>
+    {steps.map((step, index) => (
+      <li>
+        <span class="step-number">0{index + 1}</span>
+        <strong>{step.title}</strong>
+        <p>{step.text}</p>
+      </li>
+    ))}
+  </ol>
+  {feedback && <p class="process-feedback"><span aria-hidden="true">↳</span> {feedback}</p>}
+  <figcaption>{caption}</figcaption>
+</figure>

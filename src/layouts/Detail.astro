@@ -1,0 +1,29 @@
+---
+import Layout from "./Base.astro";
+import Header from "../components/Header.astro";
+interface Props {
+  title: string;
+  description: string;
+  eyebrow: string;
+  heading: string;
+  intro: string;
+  origin: string;
+}
+const { title, description, eyebrow, heading, intro, origin } = Astro.props;
+---
+<Layout title={`${title} — Totem`} description={description}>
+  <Header />
+  <main id="main" class="detail wrap">
+    <a class="back-link" href={`/#${origin}`}><span aria-hidden="true">←</span> Back to overview</a>
+    <header class="detail-heading">
+      <p class="eyebrow">{eyebrow}</p>
+      <h1>{heading}</h1>
+      <p class="detail-intro">{intro}</p>
+    </header>
+    <slot />
+    <footer class="detail-footer">
+      <a class="back-link" href={`/#${origin}`}><span aria-hidden="true">←</span> Back to overview</a>
+      <span>Totem · An ongoing experiment</span>
+    </footer>
+  </main>
+</Layout>

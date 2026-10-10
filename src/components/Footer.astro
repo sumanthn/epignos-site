@@ -1,16 +1,5 @@
 ---
-import { footer, product, site } from "../content";
-
-const year = new Date().getFullYear();
+import { site } from "../content";
+import Mark from "./Mark.astro";
 ---
-
-<footer class="site-footer">
-  <div class="wrap footer-inner">
-    <p>{footer.line}</p>
-    <div class="footer-meta">
-      <a href={product.href}>{product.name}</a>
-      <a href={`mailto:${site.email}`}>{site.email}</a>
-      <span>© {year}</span>
-    </div>
-  </div>
-</footer>
+<footer class="site-footer wrap"><div class="footer-top"><a class="wordmark" href="/" aria-label="Totem home"><Mark />totem<span class="wordmark-period">.</span></a><p>Intelligence. Attention. Transition.</p><a href={site.epinote}>EpiNote <span aria-hidden="true">↗</span></a></div><div class="footer-bottom"><span>An ongoing exploration.</span><span>© {new Date().getFullYear()} Totem</span><a href="#main">Back to the beginning ↑</a></div></footer>

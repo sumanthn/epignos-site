@@ -1,103 +1,35 @@
 export const site = {
-  name: "Epignos",
-  domain: "epignos.dev",
-  url: "https://epignos.dev",
-  email: "hello@epignos.dev",
-  title: "Epignos — simple AI tools, and the work around them",
-  description:
-    "Epignos is a small studio. EpiNote is our first product: a calm place for notes that stay useful. We also help founders decide what to build with AI, then ship it.",
-  ogImage: "/og.png",
+  name: "Totem", domain: "epignos.dev", url: "https://epignos.dev",
+  title: "Totem — Intelligence that moves you",
+  description: "You choose the goal. AI drives the transition. Totem explores a new vocabulary for moving between states, supported by Epignos’s research into understanding the mind.",
+  ogImage: "/og.png", epinote: "https://epinote.epignos.dev",
 };
-
-export const hero = {
-  kicker: "A small AI studio",
-  headline: "Simple tools. Clear work.",
-  lede: "Epignos ships small AI products, and helps founders do the same. No decks. No theater.",
-  primaryCta: "Open EpiNote",
-  primaryHref: "https://epinote.epignos.dev",
-  secondaryCta: "Write to us",
-  secondaryHref: "#contact",
-};
-
-export const product = {
-  eyebrow: "Product",
-  name: "EpiNote",
-  badge: "Beta",
-  title: "Capture the thought. Keep the meaning.",
-  body: "A calm home for notes — organized into workspaces and books, ready to search and reuse. Simple notes first. Intelligence when it helps.",
-  href: "https://epinote.epignos.dev",
-  cta: "Open EpiNote",
-  secondaryCta: "Create a workspace",
-  secondaryHref: "https://epinote.epignos.dev/register",
-  points: [
-    {
-      name: "Capture",
-      body: "Write the thought clearly. Don’t wait for a perfect system.",
-    },
-    {
-      name: "Organize",
-      body: "Workspaces and books, without slowing you down.",
-    },
-    {
-      name: "Reuse",
-      body: "Search, connect, and summarize when you need the meaning back.",
-    },
-  ],
-  preview: {
-    search: "Search your notes",
-    library: "Library",
-    book: "Quick Capture",
-    notes: ["Product thinking", "Research notes", "Ideas to revisit"],
-    path: "Unsorted / Product thinking",
-    heading: "Knowledge should stay useful",
-    text: "Capture the original thought clearly. Organize it without slowing down. Let intelligence suggest connections, while the note stays yours.",
+export const recordings = [
+  {
+    name: "Electronic", file: "/audio/electronic.mp3", number: "01",
+    description: "A restrained pulse builds tension, then arrives at a sustained, driving rhythm. This version asks whether sound alone can carry the intended move.",
+    phases: [
+      { time: "0–4s", name: "Restrained pulse", duration: 4 },
+      { time: "4–14s", name: "Raise tension", duration: 10 },
+      { time: "14–40s", name: "Sustain the drive", duration: 26 },
+    ],
   },
-};
-
-export const work = {
-  eyebrow: "Consulting",
-  title: "If you need a partner, not a product",
-  intro: "Short, scoped work for founders. We say no when we should.",
-  items: [
-    {
-      name: "Advise",
-      body: "When the problem is still fuzzy. What is worth building — and what to leave alone.",
-    },
-    {
-      name: "Build",
-      body: "When the problem is clear and small. A tool, a workflow, an integration. Weeks, not quarters.",
-    },
-    {
-      name: "Hand it over",
-      body: "You own the code, the accounts, the keys.",
-    },
-  ],
-};
-
-export const about = {
-  eyebrow: "About",
-  title: "Who it is",
-  name: "Sumanth",
-  body: [
-    "Epignos is Sumanth. A shop this small is the person.",
-    "I built EpiNote. I also help founders figure out where AI belongs in their product — then I build that too. Bias toward small systems and skipping the demo that never ships.",
-  ],
-};
-
-export const contact = {
-  eyebrow: "Contact",
-  title: "Write",
-  intro: "A few lines is enough. Product, consulting, or something in between.",
-  nameLabel: "Name",
-  emailLabel: "Email",
-  messageLabel: "What you need",
-  submit: "Send",
-  sending: "Sending…",
-  success: "Sent. I’ll read it and reply.",
-  error: "Something went wrong. Email hello@epignos.dev instead.",
-  note: "I’ll only use this to reply.",
-};
-
-export const footer = {
-  line: "Epignos · ἐπίγνωσις — full knowledge",
-};
+  {
+    name: "Sitar", file: "/audio/sitar.mp3", number: "02",
+    description: "Sparse sitar phrases make room for a growing pulse, followed by faster plucking and driving tabla. The same intended transition is explored through a different musical texture.",
+    phases: [
+      { time: "0–8s", name: "Sparse opening", duration: 8 },
+      { time: "8–20s", name: "Pulse enters", duration: 12 },
+      { time: "20–40s", name: "Sustain intensity", duration: 20 },
+    ],
+  },
+  {
+    name: "Voice + music", file: "/audio/voice.mp3", number: "03",
+    description: "Spoken language sits over a musical rise. The voice frames the lack of challenge and invites a more demanding next action, while the music builds and settles into a pulse.",
+    phases: [
+      { time: "0–10s", name: "Flat", duration: 10 },
+      { time: "10–28s", name: "Rise", duration: 18 },
+      { time: "28–40s", name: "Hold the pulse", duration: 12 },
+    ],
+  },
+];

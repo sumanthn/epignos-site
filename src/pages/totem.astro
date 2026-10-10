@@ -1,0 +1,62 @@
+---
+import Detail from "../layouts/Detail.astro";
+import ProcessDiagram from "../components/ProcessDiagram.astro";
+const routes = [
+  { state: "Distracted", steps: ["Narrow attention", "Return to the totem"], explanation: "Attention is spread across too many things. The proposed signal strips the sound down to one repeated motif.", line: "Return." },
+  { state: "Overwhelmed", steps: ["Lower intensity", "Narrow attention", "Return to the totem"], explanation: "When the field is already too full, more intensity can add to the load. The proposed route settles the sound before narrowing it.", line: "Everything can wait except one thing. Which?" },
+  { state: "Fatigued", steps: ["Shrink the step", "Permit rest", "Return to the totem"], explanation: "The next action can be smaller, and stopping remains an option. The proposed signal uses quiet phrases and space for a pause.", line: "One brick. Then stop." },
+];
+---
+<Detail title="How Totem works" description="Totem explores a new vocabulary for understanding states and driving transitions toward your chosen goal." eyebrow="01 / Totem" heading="You choose the goal. AI drives the transition." intro="Totem explores how AI can understand your present state, choose a useful next move, and express it through words, sound, and rhythm. The goal is a transition you can act on." origin="totem">
+  <ProcessDiagram label="The transition" steps={[
+    { title: "Current state", text: "The starting point: distracted, overwhelmed, fatigued, or something else." },
+    { title: "Adaptive signal", text: "A composition of sound, rhythm, language, and attention." },
+    { title: "Intended state", text: "A shift that supports the direction you have chosen." },
+  ]} caption="The human chooses the totem. The system adapts the signal. This diagram describes the intended process, not a demonstrated outcome." />
+  <section class="detail-section">
+    <h2>A vocabulary that helps you move.</h2>
+    <p>The idea is to invent language that makes states easier to recognise and transitions easier to attempt. A useful term gives you something to notice, return to, or do.</p>
+    <dl class="question-list">
+      <div><dt>Totem</dt><dd>Your chosen point of orientation: the goal, craft, or principle you want to move toward.</dd></div>
+      <div><dt>Mantra</dt><dd>The path back: a phrase or pattern shaped for your present state. It can change while the totem stays the same.</dd></div>
+      <div><dt>State transition</dt><dd>A move in attention, energy, or readiness that brings the chosen direction within reach.</dd></div>
+    </dl>
+    <p class="detail-note">A starting vocabulary to develop and test through feedback.</p>
+  </section>
+  <section class="detail-section">
+    <h2>One direction. Different moves.</h2>
+    <p>For these examples, the totem is <strong>Build</strong>. The same direction can call for a different route depending on the starting state.</p>
+    <div class="route-explorer">
+      <div class="route-choices" role="group" aria-label="Explore a starting state">
+        {routes.map((route, index) => <button type="button" data-route={index} aria-pressed={index === 0} aria-controls="route-result">{route.state}</button>)}
+      </div>
+      <div id="route-result" class="route-result" aria-live="polite" aria-atomic="true">
+        <ol class="route-sequence">{routes[0].steps.map(step => <li>{step}</li>)}</ol>
+        <p class="route-explanation">{routes[0].explanation}</p>
+        <blockquote class="route-line">“{routes[0].line}”</blockquote>
+      </div>
+    </div>
+    <p class="detail-note">These are illustrative routes from the prototype, not measured effects.</p>
+  </section>
+  <section class="detail-section prose">
+    <h2>What exists today</h2>
+    <p>The prototype maps a selected state to a sequence of moves and uses that sequence to compose an audio signal. It can vary the musical style while keeping the chosen direction in view.</p>
+    <p>The next step is to observe what happens after the signal and use that feedback to improve the next one. That is where the synthetic observer comes in.</p>
+    <a class="text-link" href="/synthetic-mind/">Explore the feedback system <span aria-hidden="true">→</span></a>
+  </section>
+  <aside class="detail-aside"><strong>The direction belongs to you.</strong><p>You can change or reconsider your totem. Grief, loneliness, and doubt about the goal are not simply deviations to correct.</p></aside>
+</Detail>
+<script define:vars={{ routes }}>
+  document.querySelectorAll('[data-route]').forEach(button => {
+    button.addEventListener('click', () => {
+      const route = routes[Number(button.dataset.route)];
+      if (!route) return;
+      document.querySelectorAll('[data-route]').forEach(item => item.setAttribute('aria-pressed', String(item === button)));
+      document.querySelector('.route-sequence').replaceChildren(...route.steps.map(step => {
+        const item = document.createElement('li'); item.textContent = step; return item;
+      }));
+      document.querySelector('.route-explanation').textContent = route.explanation;
+      document.querySelector('.route-line').textContent = `“${route.line}”`;
+    });
+  });
+</script>

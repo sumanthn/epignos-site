@@ -1,0 +1,36 @@
+---
+import { recordings } from "../content";
+interface Props { detailed?: boolean; }
+const { detailed = false } = Astro.props;
+const Heading = detailed ? 'h2' : 'h3';
+---
+<div class:list={["examples", { "detailed-examples": detailed }]}>
+  {recordings.map(recording => (
+    <article class="example">
+      <div class="example-name">
+        <span class="example-number">{recording.number}</span>
+        <Heading>{recording.name}</Heading>
+      </div>
+      <audio controls preload="metadata" aria-label={`Play ${recording.name} Totem experiment`} src={recording.file}>
+        <a href={recording.file}>Download {recording.name} experiment</a>
+      </audio>
+      {detailed && <>
+        <p class="recording-description">{recording.description}</p>
+        <figure class="composition">
+          <figcaption>Planned composition · 40 seconds</figcaption>
+          <ol>
+            {recording.phases.map(phase => <li style={`--duration: ${phase.duration}`}><span>{phase.time}</span><strong>{phase.name}</strong></li>)}
+          </ol>
+        </figure>
+      </>}
+    </article>
+  ))}
+</div>
+<script>
+  const players = document.querySelectorAll('audio');
+  players.forEach(player => {
+    player.addEventListener('play', () => {
+      players.forEach(other => { if (other !== player) other.pause(); });
+    });
+  });
+</script>

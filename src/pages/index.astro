@@ -1,22 +1,58 @@
 ---
 import Layout from "../layouts/Base.astro";
 import Header from "../components/Header.astro";
-import Hero from "../components/Hero.astro";
-import Product from "../components/Product.astro";
-import Work from "../components/Work.astro";
-import About from "../components/About.astro";
-import Contact from "../components/Contact.astro";
-import Footer from "../components/Footer.astro";
+import AudioExamples from "../components/AudioExamples.astro";
+import { site } from "../content";
 ---
 
 <Layout>
   <Header />
-  <main id="main">
-    <Hero />
-    <Product />
-    <Work />
-    <About />
-    <Contact />
+  <main id="main" class="quadrants wrap">
+    <section class="quadrant totem-quadrant" id="totem" aria-labelledby="totem-heading">
+      <p class="eyebrow"><span>01</span> Totem / The idea</p>
+      <h1 id="totem-heading">AI for<br /><em>state transitions.</em></h1>
+      <p class="intro">Move from the state you’re in toward the state you choose.</p>
+      <p>You choose the goal. AI drives the transition—developing a vocabulary of words, sound, and rhythm to help you move toward it.</p>
+      <div class="state-path" aria-label="Current state, then adaptive signal, then chosen state">
+        <span>Current state</span><span class="path-arrow" aria-hidden="true">→</span>
+        <span>Adaptive signal</span><span class="path-arrow" aria-hidden="true">→</span>
+        <span>Chosen state</span>
+      </div>
+      <a class="card-link" href="/totem/">Explore Totem <span aria-hidden="true">→</span></a>
+    </section>
+
+    <section class="quadrant examples-quadrant" id="signals" aria-labelledby="examples-heading">
+      <p class="eyebrow"><span>02</span> Examples / Listen</p>
+      <h2 id="examples-heading">Hear the signal.</h2>
+      <p>Three early compositions exploring a transition from boredom toward building.</p>
+      <AudioExamples />
+      <p class="note">40 seconds each. Prototype recordings; their effects have not yet been established.</p>
+      <a class="card-link" href="/examples/">Explore the recordings <span aria-hidden="true">→</span></a>
+    </section>
+
+    <section class="quadrant mind-quadrant" id="observer" aria-labelledby="mind-heading">
+      <p class="eyebrow"><span>03</span> Synthetic mind / Feedback</p>
+      <h2 id="mind-heading"><strong>Epignos</strong></h2>
+      <p class="intro">Meta Mind for the Minds!</p>
+      <p>Understanding how minds change. A synthetic mind to observe state transitions and give Totem feedback.</p>
+      <div class="feedback-path" aria-label="Proposed feedback loop: Totem, transition, synthetic observer, feedback to Totem">
+        <span>Totem</span><span aria-hidden="true">→</span>
+        <span>Transition</span><span aria-hidden="true">→</span>
+        <span>Observer</span><span class="feedback-return">↳ Feedback to Totem</span>
+      </div>
+      <p class="research-note"><span class="status-dot"></span> Research in development</p>
+      <a class="card-link" href="/synthetic-mind/">Explore the observer <span aria-hidden="true">→</span></a>
+    </section>
+
+    <section class="quadrant quote-quadrant" id="idea" aria-label="The principle and links">
+      <p class="eyebrow"><span>04</span> The point of return</p>
+      <blockquote>“The mantra is the path.<br />The totem is the destination.”</blockquote>
+      <p class="attribution">Sumanth · <cite>The Reflective Totem</cite></p>
+      <nav class="resource-links" aria-label="Explore more">
+        <a href={site.epinote}>EpiNote <span aria-hidden="true">↗</span></a>
+        <a href="https://x.com/Sumanth_n83">Writing on X <span aria-hidden="true">↗</span></a>
+      </nav>
+      <a class="card-link" href="/principle/">Read the principle <span aria-hidden="true">→</span></a>
+    </section>
   </main>
-  <Footer />
 </Layout>

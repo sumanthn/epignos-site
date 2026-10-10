@@ -1,0 +1,25 @@
+---
+import Detail from "../layouts/Detail.astro";
+import ProcessDiagram from "../components/ProcessDiagram.astro";
+import { site } from "../content";
+---
+<Detail title="The point of return" description="The founding principle of Totem: the human chooses the direction, and the system adapts the path." eyebrow="04 / The principle" heading="The point of return." intro="A totem is something you consciously choose to orient around: a craft, a principle, a question, or a goal. It gives changing signals a common direction." origin="idea">
+  <blockquote class="principle-quote">“The mantra is the path.<br />The totem is the destination.”</blockquote>
+  <p class="detail-note">Sumanth · <cite>The Reflective Totem</cite></p>
+  <ProcessDiagram label="A deliberate separation" steps={[
+    { title: "You choose the direction", text: "Decide what deserves your attention. Keep the freedom to reconsider it." },
+    { title: "The system adapts the path", text: "Compose a signal that responds to the state you are in." },
+  ]} caption="The machine can vary the signal. It does not get to choose what ultimately matters to you." />
+  <section class="detail-section prose">
+    <h2>The signal can change.</h2>
+    <p>Your energy, attention, and context move throughout the day. A useful signal has to meet that changing state. Sometimes it may narrow attention; sometimes it may lower intensity or make the next step smaller.</p>
+    <p>Words are one part of that signal. Rhythm, sound, breath, repetition, and silence are other possibilities explored in the founding idea.</p>
+    <p>The deeper ambition is Epignos: a meta-mind that understands the mind well enough to develop new vocabulary for change. Totem is the driver; the synthetic mind supplies observation and feedback.</p>
+    <h2>The totem can be reconsidered.</h2>
+    <p>A stable direction is a reference point, not a permanent obligation. Repeated difficulty returning to a goal can be a reason to reflect on the goal itself. That choice remains human.</p>
+  </section>
+  <nav class="detail-resources" aria-label="Related links">
+    <a href="https://x.com/Sumanth_n83"><strong>Writing on X <span aria-hidden="true">↗</span></strong><span>More thoughts from Sumanth.</span></a>
+    <a href={site.epinote}><strong>EpiNote <span aria-hidden="true">↗</span></strong><span>A place to capture and return to your notes.</span></a>
+  </nav>
+</Detail>

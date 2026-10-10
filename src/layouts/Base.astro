@@ -19,10 +19,12 @@ const ogImage = new URL(site.ogImage, site.url).toString();
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{title}</title>
     <meta name="description" content={description} />
+    <link rel="preload" href="/fonts/source-sans-3.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="/fonts/lora.woff2" as="font" type="font/woff2" crossorigin />
     <link rel="canonical" href={canonical} />
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-    <meta name="theme-color" content="#f7f7f2" />
+    <meta name="theme-color" content="#f4f2eb" />
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content={site.name} />
     <meta property="og:title" content={title} />

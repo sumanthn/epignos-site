@@ -9,11 +9,14 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "brand-assets": "node scripts/generate-brand-assets.mjs"
   },
   "dependencies": {
     "@astrojs/node": "^11.1.4",
-    "astro": "^7.2.4",
-    "resend": "^6.21.0"
+    "astro": "^7.2.4"
+  },
+  "devDependencies": {
+    "sharp": "^0.35.3"
   }
 }
